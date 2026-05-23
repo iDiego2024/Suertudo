@@ -89,12 +89,12 @@ export function HistoryPanel({ history, onAdd, onRemove }: Props) {
               value={inputValue}
               onChange={(e) => { setInputValue(e.target.value); setError(''); }}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-slate-50 border border-slate-200 text-sm rounded-xl px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all font-mono"
+              className="flex-1 bg-slate-50 border border-slate-200 text-base sm:text-sm rounded-xl px-3 py-3 sm:py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all font-mono"
             />
             <button 
               onClick={handleAdd}
               disabled={!inputValue}
-              className="bg-purple-600 hover:bg-purple-700 disabled:bg-slate-300 text-white p-2 rounded-xl transition-colors shrink-0"
+              className="bg-purple-600 hover:bg-purple-700 disabled:bg-slate-300 text-white px-4 sm:p-2 rounded-xl transition-colors shrink-0 flex items-center justify-center min-h-[44px] sm:min-h-0"
               title="Añadir a historial"
             >
               <Plus className="w-5 h-5" />

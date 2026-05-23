@@ -53,14 +53,14 @@ export function CombinationGenerator({ baseSelection, onGenerate }: Props) {
               max="10000"
               value={count}
               onChange={(e) => setCount(parseInt(e.target.value) || 0)}
-              className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xl font-black rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xl font-black rounded-xl px-4 py-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
             <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
               {[10, 50, 100].map(val => (
                 <button
                   key={val}
                   onClick={() => setCount(val)}
-                  className="px-2 py-1 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-md transition-colors"
+                  className="px-3 py-2 sm:px-2 sm:py-1 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-lg sm:rounded-md transition-colors"
                 >
                   +{val}
                 </button>

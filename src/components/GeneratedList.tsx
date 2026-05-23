@@ -77,21 +77,21 @@ export function GeneratedList({ combinations, onClear }: Props) {
           </p>
         </div>
         
-        <div className="flex flex-wrap items-center gap-2">
-          <button onClick={exportText} className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-lg transition-colors" title="Descargar como Texto">
-             <FileText className="w-3.5 h-3.5" /> TXT
+        <div className="grid grid-cols-2 lg:flex lg:flex-wrap items-center gap-2 w-full lg:w-auto mt-4 sm:mt-0">
+          <button onClick={exportText} className="flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-lg transition-colors min-h-[44px] sm:min-h-0" title="Descargar como Texto">
+             <FileText className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> TXT
           </button>
-          <button onClick={exportCSV} className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-colors" title="Descargar CSV">
-            <Download className="w-3.5 h-3.5" /> CSV
+          <button onClick={exportCSV} className="flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-colors min-h-[44px] sm:min-h-0" title="Descargar CSV">
+            <Download className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> CSV
           </button>
-          <button onClick={exportWhatsApp} className="flex items-center gap-1.5 px-3 py-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-bold rounded-lg transition-colors" title="Enviar por WhatsApp">
-            <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
+          <button onClick={exportWhatsApp} className="flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-bold rounded-lg transition-colors min-h-[44px] sm:min-h-0" title="Enviar por WhatsApp">
+            <MessageCircle className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> WA
           </button>
-          <button onClick={exportEmail} className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-colors" title="Enviar por Correo">
-            <Mail className="w-3.5 h-3.5" /> Correo
+          <button onClick={exportEmail} className="flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-colors min-h-[44px] sm:min-h-0" title="Enviar por Correo">
+            <Mail className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> Mail
           </button>
-          <button onClick={onClear} className="flex items-center gap-1.5 px-3 py-1.5 bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold rounded-lg transition-colors ml-auto sm:ml-0" title="Limpiar todo">
-            <Trash2 className="w-3.5 h-3.5" /> Limpiar
+          <button onClick={onClear} className="col-span-2 lg:col-span-1 flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-1.5 bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold rounded-lg transition-colors min-h-[44px] sm:min-h-0 lg:ml-auto" title="Limpiar todo">
+            <Trash2 className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> Limpiar
           </button>
         </div>
       </div>
@@ -124,10 +124,10 @@ export function GeneratedList({ combinations, onClear }: Props) {
               
               <button
                 onClick={() => handleCopy(idx, combo)}
-                className="self-end sm:self-auto p-2 rounded-lg text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-colors opacity-100 sm:opacity-0 group-hover:opacity-100"
+                className="self-end sm:self-auto p-3 sm:p-2 rounded-lg text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-colors opacity-100 sm:opacity-0 group-hover:opacity-100 active:scale-95"
                 title="Copiar"
               >
-                {copied === idx ? <span className="text-xs font-bold text-emerald-500">¡Copiado!</span> : <Copy className="w-4 h-4" />}
+                {copied === idx ? <span className="text-xs font-bold text-emerald-500">¡Copiado!</span> : <Copy className="w-5 h-5 sm:w-4 sm:h-4" />}
               </button>
             </motion.div>
           ))}
