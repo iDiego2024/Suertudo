@@ -73,12 +73,17 @@ export function generateBasedOn(base: number[], numChanges: number = 4): number[
   return keep.sort((a, b) => a - b);
 }
 
-export function generateCombinations(count: number, mode: import('../types').GeneratorMode, baseSelection?: number[]): number[][] {
+export function generateCombinations(count: number, mode: import('../types').GeneratorMode, baseSelection?: number[], existingCombinations: number[][] = []): number[][] {
   const results = new Set<string>();
+  
+  // Añadir combinaciones existentes al Set para no repetirlas
+  existingCombinations.forEach(combo => results.add(combo.join(',')));
+  
   const parsedResults: number[][] = [];
   
   let attempts = 0;
-  const maxAttempts = count * 20;
+  // Aumentar un poco los intentos por si hay muchas combinaciones existentes
+  const maxAttempts = count * 50;
   
   while(parsedResults.length < count && attempts < maxAttempts) {
     let candidate: number[];

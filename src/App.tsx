@@ -89,6 +89,7 @@ export default function App() {
 
             <CombinationGenerator 
               baseSelection={selectedNumbers}
+              existingCombinations={generatedCombinaciones}
               onGenerate={appendCombinaciones}
             />
           </div>

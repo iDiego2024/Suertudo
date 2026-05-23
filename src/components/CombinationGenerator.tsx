@@ -7,10 +7,11 @@ import { cn } from '../lib/utils';
 
 interface Props {
   baseSelection: number[];
+  existingCombinations: Combination[];
   onGenerate: (combinations: Combination[]) => void;
 }
 
-export function CombinationGenerator({ baseSelection, onGenerate }: Props) {
+export function CombinationGenerator({ baseSelection, existingCombinations, onGenerate }: Props) {
   const [count, setCount] = useState<number>(10);
   const [mode, setMode] = useState<GeneratorMode>('balanceado');
   const [isGenerating, setIsGenerating] = useState(false);
@@ -20,7 +21,7 @@ export function CombinationGenerator({ baseSelection, onGenerate }: Props) {
     setIsGenerating(true);
     // Use timeout to allow UI update before heavy calculation
     setTimeout(() => {
-      const results = generateCombinations(count, mode, baseSelection);
+      const results = generateCombinations(count, mode, baseSelection, existingCombinations);
       onGenerate(results);
       setIsGenerating(false);
     }, 100);
