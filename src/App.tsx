@@ -8,6 +8,19 @@ import { Combination } from './types';
 import { Dices, Trash2 } from 'lucide-react';
 import { generateRandom } from './lib/math';
 
+const LuckyCatIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" className={className}>
+    <polygon points="18,20 14,4 32,14" fill="currentColor" />
+    <polygon points="46,20 50,4 32,14" fill="currentColor" />
+    <circle cx="32" cy="24" r="15" fill="currentColor" />
+    <path d="M32 60 C12 60 10 42 12 30 C15 15 49 15 52 30 C54 42 52 60 32 60 Z" fill="currentColor" />
+    <path d="M46 36 L52 18 A 5 5 0 0 0 42 14 L36 26" stroke="currentColor" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M18 36 L14 46 A 5 5 0 0 0 24 50 L30 42" stroke="currentColor" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <circle cx="32" cy="44" r="7" fill="#facc15" />
+    <rect x="29.5" y="41.5" width="5" height="5" fill="#991b1b" />
+  </svg>
+);
+
 export default function App() {
   const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
   const [generatedCombinaciones, setGeneratedCombinaciones] = useState<Combination[]>([]);
@@ -43,8 +56,8 @@ export default function App() {
       <header className="bg-red-700 bg-gradient-to-r from-red-800 to-red-600 text-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-inner">
-              <span className="text-red-800 font-black text-xl italic tracking-tighter pr-1">S</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center shadow-inner border border-yellow-200">
+              <LuckyCatIcon className="w-8 h-8 text-red-900 drop-shadow-sm" />
             </div>
             <div>
               <h1 className="text-2xl font-black italic tracking-tight drop-shadow-md">SUERTUDO PRO</h1>
