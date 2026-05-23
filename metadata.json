@@ -1,0 +1,6 @@
+{
+  "name": "Suertudo Pro",
+  "description": "Generador inteligente de combinaciones y probabilidades para Kino de 25 números.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
